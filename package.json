@@ -1,15 +1,15 @@
 {
-  "name": "nodejs",
+  "name": "farcaster-quote-miniapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mini app for Farcaster that shows random quotes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/node": "^22.13.11"
-  }
+  "license": "ISC"
 }
