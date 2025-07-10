@@ -1,5 +1,4 @@
-// index.js
-const express = require('express');
+const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -11,8 +10,10 @@ const quotes = [
   "Dream big. Start small. Act now."
 ];
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+  res.setHeader("Content-Type", "text/html");
   res.send(`
     <!DOCTYPE html>
     <html>
@@ -22,16 +23,16 @@ app.get('/', (req, res) => {
         <meta name="fc:frame" content="vNext" />
         <meta name="fc:frame:image" content="https://dummyimage.com/600x300/000/fff&text=${encodeURIComponent(quote)}" />
         <meta name="fc:frame:button:1" content="Get Another" />
-        <meta name="fc:frame:post_url" content="https://your-vercel-url.vercel.app/" />
+        <meta name="fc:frame:post_url" content="https://farcaster-quote-miniapp.vercel.app" />
         <title>Quote Generator</title>
       </head>
       <body>
-        <h1>${quote}</h1>
+        <h1 style="text-align:center;font-family:sans-serif;margin-top:50px;">${quote}</h1>
       </body>
     </html>
   `);
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
